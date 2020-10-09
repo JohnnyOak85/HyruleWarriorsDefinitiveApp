@@ -1,0 +1,76 @@
+<h1 mat-dialog-title>{{data.tile.blurb}}</h1>
+
+<mat-dialog-content>
+
+    <ion-grid *ngIf="data.tile.search">
+        <h2>Search</h2>
+        <ion-row>
+            <ion-col size="10">
+                <img src="../../assets/maps/{{data.map}}/search/{{data.tile.position}}.png" layout-fill>
+            </ion-col>
+            <ion-col *ngFor="let item of data.tile.search" size="3">
+                <img src="../../assets/icons/{{item}}.png">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="data.tile.victory">
+        <h2>Victory</h2>
+        <ion-row *ngFor="let spoil of data.tile.victory">
+            <ion-col size="2">
+                <img src="../../assets/icons/{{spoil.loot}}.png">
+            </ion-col>
+            <ion-col size="2">
+                <img src="../../assets/icons/{{spoil.char}}.png" *ngIf="spoil.char">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="data.tile.rank">
+        <h2>A Rank</h2>
+        <ion-row>
+            <ion-col size="2">
+                <img src="../../assets/icons/{{data.tile.rank.loot}}.png" *ngIf="data.tile.rank.loot">
+            </ion-col>
+            <ion-col size="2">
+                <img src="../../assets/icons/{{data.tile.rank.char}}.png" *ngIf="data.tile.rank.char">
+            </ion-col>
+            <ion-col>
+                <p *ngIf="data.tile.kos">KOs: {{data.tile.kos}}</p>
+                <p>Minutes: {{data.tile.time}}</p>
+                <p>Damage: {{data.tile.damage}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="data.tile.treasure">
+        <h2>Treasure</h2>
+        <ion-row *ngFor="let spoil of data.tile.treasure">
+            <ion-col size="3">
+                <img src="../../assets/icons/{{spoil.loot}}.png">
+            </ion-col>
+            <ion-col size="3">
+                <img src="../../assets/icons/{{spoil.char}}.png" *ngIf="spoil.char">
+            </ion-col>
+            <ion-col>
+                <p>{{spoil.where}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+pots
+    </ion-grid>
+
+    <ion-grid *ngIf="data.tile.skulltulas">
+        <h2>Skulltulas</h2>
+        <ion-row *ngFor="let requirement of data.tile.skulltulas">
+            <ion-col size="1">
+                <img src="../../assets/icons/skulltula.png">
+            </ion-col>
+            <ion-col>
+                <p>{{requirement}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</mat-dialog-content>
