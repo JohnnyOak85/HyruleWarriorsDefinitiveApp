@@ -29,16 +29,16 @@
     <ion-grid *ngIf="data.tile.rank">
         <h2>A Rank</h2>
         <ion-row>
-            <ion-col size="2">
-                <img src="../../assets/icons/{{data.tile.rank.loot}}.png" *ngIf="data.tile.rank.loot">
+            <ion-col size="2" *ngIf="data.tile.rank.loot">
+                <img src="../../assets/icons/{{data.tile.rank.loot}}.png">
             </ion-col>
-            <ion-col size="2">
-                <img src="../../assets/icons/{{data.tile.rank.char}}.png" *ngIf="data.tile.rank.char">
+            <ion-col size="2" *ngIf="data.tile.rank.char">
+                <img src="../../assets/icons/{{data.tile.rank.char}}.png">
             </ion-col>
             <ion-col>
-                <p *ngIf="data.tile.kos">KOs: {{data.tile.kos}}</p>
-                <p>Minutes: {{data.tile.time}}</p>
-                <p>Damage: {{data.tile.damage}}</p>
+                <p *ngIf="data.tile.rank.kos">KOs: {{data.tile.rank.kos}}</p>
+                <p>Minutes: {{data.tile.rank.time}}</p>
+                <p>Damage: {{data.tile.rank.damage}}</p>
             </ion-col>
         </ion-row>
     </ion-grid>
@@ -58,13 +58,21 @@
         </ion-row>
     </ion-grid>
 
-    <ion-grid>
-pots
+    <ion-grid *ngIf="data.tile.pot">
+        <h2>Pots</h2>
+        <ion-row *ngFor="let spoil of data.tile.pot">
+            <ion-col size="3">
+                <img src="../../assets/icons/{{spoil.loot}}.png">
+            </ion-col>
+            <ion-col>
+                <p>{{spoil.where}}</p>
+            </ion-col>
+        </ion-row>
     </ion-grid>
 
-    <ion-grid *ngIf="data.tile.skulltulas">
+    <ion-grid *ngIf="data.tile.skulltula">
         <h2>Skulltulas</h2>
-        <ion-row *ngFor="let requirement of data.tile.skulltulas">
+        <ion-row *ngFor="let requirement of data.tile.skulltula">
             <ion-col size="1">
                 <img src="../../assets/icons/skulltula.png">
             </ion-col>
