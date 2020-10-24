@@ -37,8 +37,8 @@
             </ion-col>
             <ion-col>
                 <p *ngIf="data.tile.rank.kos">KOs: {{data.tile.rank.kos}}</p>
-                <p>Minutes: {{data.tile.rank.time}}</p>
-                <p>Damage: {{data.tile.rank.damage}}</p>
+                <p *ngIf="data.tile.rank.time">Minutes: {{data.tile.rank.time}}</p>
+                <p *ngIf="data.tile.rank.damage">Damage: {{data.tile.rank.damage}}</p>
             </ion-col>
         </ion-row>
     </ion-grid>
