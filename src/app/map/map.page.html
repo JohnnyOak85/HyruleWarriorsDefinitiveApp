@@ -12,9 +12,9 @@
 
   <div id="container">
     <mat-grid-list id="tiles" cols="16" rowHeight="16:10">
-      <mat-grid-tile *ngFor="let tile of tiles" (click)="openTile(tile)">
+      <mat-grid-tile *ngFor="let tile of tiles">
         <img src="../../assets/maps/{{mapId.toLocaleLowerCase()}}/tiles/{{tile.position}}.png" layout-fill
-          *ngIf="tile.position">
+          *ngIf="tile.position" (click)="openTile(tile)">
       </mat-grid-tile>
     </mat-grid-list>
   </div>
