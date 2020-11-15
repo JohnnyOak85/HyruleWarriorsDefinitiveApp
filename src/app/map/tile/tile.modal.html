@@ -2,13 +2,22 @@
 <h2 mat-dialog-title *ngIf="data.tile.rule">{{data.tile.rule}}</h2>
 
 <mat-dialog-content>
+    <ion-grid *ngIf="data.tile.level">
+        <ion-col *ngFor="let item of [].constructor(data.tile.level)">
+            <img src="../../assets/icons/skelli.png">
+        </ion-col>
+    </ion-grid>
+
+<ion-grid *ngIf="data.tile.farming">
+
+</ion-grid>
 
     <ion-grid *ngIf="data.tile.search">
         <h2>Search</h2>
         <ion-row>
-            <ion-col size="5">
+            <!-- <ion-col size="5">
                 <img src="../../assets/maps/{{data.map}}/search/{{data.tile.position}}.png" layout-fill>
-            </ion-col>
+            </ion-col> -->
             <ion-col *ngFor="let item of data.tile.search" size="2">
                 <img src="../../assets/icons/{{item}}.png">
             </ion-col>

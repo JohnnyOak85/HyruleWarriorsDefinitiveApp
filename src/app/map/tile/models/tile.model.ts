@@ -1,8 +1,8 @@
 interface Spoil {
-  loot?: string;
   kos?: number;
   time?: number;
   damage?: number;
+  loot?: string;
   char?: string;
   where?: string;
 }
@@ -10,12 +10,15 @@ interface Spoil {
 export interface Tile {
   position: string;
   blurb: string;
+  rule?: string;
+  farming?: any;
+  level?: number;
   search?: string[];
-  aRank?: Spoil;
+  rank?: Spoil;
   victory?: Spoil[];
   treasure?: Spoil[];
-  pots?: Spoil[];
-  skulltulas: string[];
+  pot?: Spoil[];
+  skulltula: string[];
 }
 
 export interface TileFile {
