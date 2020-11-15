@@ -1,17 +1,18 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import { IonicModule } from "@ionic/angular";
+import { IonicModule } from '@ionic/angular';
 
-import { MapRoutingModule } from "./map-routing.module";
+import { MapRoutingModule } from './map-routing.module';
 
-import { MapComponent, TileComponent } from "./map.component";
+import { MapComponent } from './map.component';
+import { TileComponent } from './tile/tile.component';
 
-import { MatGridListModule } from "@angular/material/grid-list";
-import { MatDialogModule } from "@angular/material/dialog";
-import { MatCardModule } from "@angular/material/card";
-import { MatDividerModule } from "@angular/material/divider";
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   imports: [

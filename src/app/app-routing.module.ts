@@ -1,15 +1,27 @@
-import { NgModule } from "@angular/core";
-import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { CreditsComponent } from './credits/credits.component';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "map/legend",
-    pathMatch: "full",
-  },
-  {
-    path: "map/:id",
-    loadChildren: () => import("./map/map.module").then((m) => m.MapModule),
+    path: '',
+    component: AppComponent,
+    children: [
+      {
+        path: 'map/:id',
+        loadChildren: () => import('./map/map.module').then((m) => m.MapModule),
+      },
+      {
+        path: 'credits',
+        component: CreditsComponent,
+      },
+      {
+        path: '',
+        redirectTo: 'map/legend',
+        pathMatch: 'full',
+      },
+    ],
   },
 ];
 

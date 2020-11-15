@@ -4,7 +4,6 @@
       <ion-content>
         <ion-list id="map-list">
           <ion-list-header>Hyrule Warriors Maps</ion-list-header>
-          <ion-item-divider></ion-item-divider>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none"
