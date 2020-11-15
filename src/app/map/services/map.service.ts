@@ -1,15 +1,15 @@
 // Angular
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 // Models
+import { TileFile } from '../tile/models/tile.model';
 
 // Utils
-import { Observable } from "rxjs";
-import { TileFile } from "../models/tile.model";
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class MapService {
   constructor(private http: HttpClient) {}
