@@ -180,3 +180,5 @@ fabric.properties
 */assets
 /resources
 clothes.txt
+level.js
+.node-version
