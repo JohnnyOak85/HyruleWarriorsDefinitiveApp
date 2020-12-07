@@ -1,22 +1,70 @@
-<h3>Development</h3>
-Johnny Oak
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Credits</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<h3>Original Text Guide</h3>
-SBAllen
+<ion-card>
+  <ion-header>
+    <ion-card-subtitle> Like the app? Consider donating </ion-card-subtitle>
+  </ion-header>
+  <ion-card-content>
+    <form action="https://www.paypal.com/donate" method="post" target="_top">
+      <input type="hidden" name="hosted_button_id" value="DB3UAQ7AJ4BZU" />
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit"
+        title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+    </form>
+  </ion-card-content>
+</ion-card>
 
-<h3>Graphic Assets</h3>
-Random Talking Bush
-Dary
-Metroid DK
-The I Gaming
+<ion-card>
+  <ion-header>
+    <ion-card-title>Development</ion-card-title>
+  </ion-header>
+  <ion-card-content>
+    Johnny Oak
+  </ion-card-content>
+</ion-card>
 
-<h3>Donators</h3>
-Cionraven
-Wordview
-Yasashi
+<ion-card>
+  <ion-header>
+    <ion-card-title>Text Guide</ion-card-title>
+  </ion-header>
+  <ion-card-content>
+    SBAllen
+  </ion-card-content>
+</ion-card>
 
-<form action="https://www.paypal.com/donate" method="post" target="_top">
-  <input type="hidden" name="hosted_button_id" value="DB3UAQ7AJ4BZU" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit"
-    title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-</form>
+<ion-card>
+  <ion-header>
+    <ion-card-title>Graphical Assets</ion-card-title>
+  </ion-header>
+  <ion-card-content>
+    Random Talking Bush<br>
+    Dary<br>
+    The I Gaming
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-header>
+    <ion-card-title>Tiling</ion-card-title>
+  </ion-header>
+  <ion-card-content>
+    Metroid DK
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-header>
+    <ion-card-title>Donators</ion-card-title>
+  </ion-header>
+  <ion-card-content>
+    Cionraven<br>
+    Wordview<br>
+    Yasashi
+  </ion-card-content>
+</ion-card>

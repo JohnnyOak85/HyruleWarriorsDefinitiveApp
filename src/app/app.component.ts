@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Legend',
-      url: '/map/legend'
+      url: '/map/legend',
     },
     {
       title: 'Adventure',
@@ -58,8 +58,8 @@ export class AppComponent implements OnInit {
     // },
     {
       title: 'Credits',
-      url: '/credits'
-    }
+      url: '/credits',
+    },
   ];
 
   constructor(
