@@ -8,7 +8,7 @@ const routes: Routes = [
     loadChildren: () => import('./map/map.module').then((m) => m.MapModule),
   },
   {
-    path: 'credits',
+    path: 'about',
     component: CreditsComponent,
   },
   {

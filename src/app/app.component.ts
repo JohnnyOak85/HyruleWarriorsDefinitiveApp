@@ -57,8 +57,8 @@ export class AppComponent implements OnInit {
     //   url: '/map/rewards'
     // },
     {
-      title: 'Credits',
-      url: '/credits',
+      title: 'About',
+      url: '/about',
     },
   ];
 

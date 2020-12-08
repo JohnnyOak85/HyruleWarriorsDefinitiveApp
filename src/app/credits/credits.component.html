@@ -1,70 +1,60 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="false">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Credits</ion-title>
+    <ion-title>About</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-card>
-  <ion-header>
-    <ion-card-subtitle> Like the app? Consider donating </ion-card-subtitle>
-  </ion-header>
-  <ion-card-content>
-    <form action="https://www.paypal.com/donate" method="post" target="_top">
-      <input type="hidden" name="hosted_button_id" value="DB3UAQ7AJ4BZU" />
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit"
-        title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-    </form>
-  </ion-card-content>
-</ion-card>
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-subtitle> &nbsp; Like the app? Consider donating </ion-card-subtitle>
+    <ion-card-content>
+      <form action="https://www.paypal.com/donate" method="post" target="_top">
+        <input type="hidden" name="hosted_button_id" value="DB3UAQ7AJ4BZU" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit"
+          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+      </form>
+    </ion-card-content>
+  </ion-card>
 
-<ion-card>
-  <ion-header>
-    <ion-card-title>Development</ion-card-title>
-  </ion-header>
-  <ion-card-content>
-    Johnny Oak
-  </ion-card-content>
-</ion-card>
+  <ion-card>
+    <ion-card-title> &nbsp; Development </ion-card-title>
+    <ion-card-content>
+      Johnny Oak
+    </ion-card-content>
+  </ion-card>
 
-<ion-card>
-  <ion-header>
-    <ion-card-title>Text Guide</ion-card-title>
-  </ion-header>
-  <ion-card-content>
-    SBAllen
-  </ion-card-content>
-</ion-card>
+  <ion-card>
+    <ion-card-title> &nbsp; Text Guide </ion-card-title>
+    <ion-card-content>
+      SBAllen
+    </ion-card-content>
+  </ion-card>
 
-<ion-card>
-  <ion-header>
-    <ion-card-title>Graphical Assets</ion-card-title>
-  </ion-header>
-  <ion-card-content>
-    Random Talking Bush<br>
-    Dary<br>
-    The I Gaming
-  </ion-card-content>
-</ion-card>
+  <ion-card>
+    <ion-card-title> &nbsp; Graphical Assets </ion-card-title>
+    <ion-card-content>
+      Random Talking Bush<br>
+      Dary<br>
+      The I Gaming
+    </ion-card-content>
+  </ion-card>
 
-<ion-card>
-  <ion-header>
-    <ion-card-title>Tiling</ion-card-title>
-  </ion-header>
-  <ion-card-content>
-    Metroid DK
-  </ion-card-content>
-</ion-card>
+  <ion-card>
+    <ion-card-title> &nbsp; Tiling </ion-card-title>
+    <ion-card-content>
+      Metroid DK
+    </ion-card-content>
+  </ion-card>
 
-<ion-card>
-  <ion-header>
-    <ion-card-title>Donators</ion-card-title>
-  </ion-header>
-  <ion-card-content>
-    Cionraven<br>
-    Wordview<br>
-    Yasashi
-  </ion-card-content>
-</ion-card>
+  <ion-card>
+    <ion-card-title> &nbsp; Donators </ion-card-title>
+    <ion-card-content>
+      Cionraven<br>
+      Wordview<br>
+      Yasashi
+    </ion-card-content>
+  </ion-card>
+</ion-content>

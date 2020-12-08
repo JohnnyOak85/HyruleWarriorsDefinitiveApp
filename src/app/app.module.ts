@@ -14,12 +14,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { CreditsComponent } from './credits/credits.component';
-
 import { MapService } from './map/services/map.service';
 
 @NgModule({
-  declarations: [AppComponent, CreditsComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -38,6 +36,6 @@ import { MapService } from './map/services/map.service';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
-  bootstrap: [AppComponent, CreditsComponent],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

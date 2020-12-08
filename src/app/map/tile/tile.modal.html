@@ -2,8 +2,8 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <h1 mat-dialog-title>{{data.tile.blurb}}</h1>
-                <h2 mat-dialog-title *ngIf="data.tile.rule">{{data.tile.rule}}</h2>
+                <h2 mat-dialog-title>{{data.tile.blurb}}</h2>
+                
             </ion-col>
             <ion-col size="1">
                 <ion-button item-right color='dark' fill='clear' mat-dialog-close>
@@ -15,6 +15,7 @@
 </ion-header>
 
 <mat-dialog-content>
+    <h2 mat-dialog-title *ngIf="data.tile.rule">{{data.tile.rule}}</h2>
     <ion-grid *ngIf="data.tile.level">
         <ion-col *ngFor="let item of [].constructor(data.tile.level)">
             <img src="../../assets/icons/skelli.png">
