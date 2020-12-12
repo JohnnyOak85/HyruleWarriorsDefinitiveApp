@@ -1,8 +1,8 @@
 {
-  "name": "hyrule-warriors-maps-ionic",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "name": "hyrule-warriors-maps",
+  "version": "1.0.1",
+  "author": "João Carvalho",
+  "homepage": "https://johnnyoak85.github.io/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -61,7 +61,7 @@
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
   },
-  "description": "An Ionic project",
+  "description": "A map guide for Hyrule Warriors Definitive Edition.",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -76,5 +76,15 @@
     "platforms": [
       "android"
     ]
+  },
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnnyOak85/HyruleWarriorsApp.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnnyOak85/HyruleWarriorsApp/issues"
   }
 }
