@@ -11,19 +11,16 @@
   <ion-card>
     <ion-card-subtitle> &nbsp; Like the app? Consider donating </ion-card-subtitle>
     <ion-card-content>
-      <form action="https://www.paypal.com/donate" method="post" target="_top">
-        <input type="hidden" name="hosted_button_id" value="DB3UAQ7AJ4BZU" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit"
-          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-      </form>
+      <ion-button shape="round" size="small"
+        (click)="openLink('https://www.paypal.com/donate?hosted_button_id=VSCKB9GVSENJQ')"> DONATE
+      </ion-button>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-subtitle> &nbsp; Have feedback? Join the Discord guild </ion-card-subtitle>
     <ion-card-content>
-      <ion-button shape="round" size="small"> JOIN THE SERVER
-        <a href="https://discord.gg/ErHYKYAzSm" target="_blank"> </a>
+      <ion-button shape="round" size="small" (click)="openLink('https://discord.gg/ErHYKYAzSm')"> JOIN THE SERVER
       </ion-button>
     </ion-card-content>
   </ion-card>
