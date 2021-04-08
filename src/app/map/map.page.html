@@ -11,7 +11,8 @@
   <div id="container">
     <mat-grid-list id="tiles" cols="16" rowHeight="16:10">
       <mat-grid-tile *ngFor="let tile of tiles">
-        <img src="../../assets/maps/{{mapId.toLowerCase()}}/tiles/{{tile.position}}.png" layout-fill
+        <img id="farm" *ngIf="tile.farm" src="./assets/icons/material.png" (click)="openTile(tile)">
+        <img id="tile" src="./assets/maps/{{mapId.toLowerCase()}}/tiles/{{tile.position}}.png" layout-fill
           *ngIf="tile.position" (click)="openTile(tile)">
       </mat-grid-tile>
     </mat-grid-list>
