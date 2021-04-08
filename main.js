@@ -14,7 +14,6 @@ function createWindow() {
 
     window.loadURL(`${__dirname}/www/index.html`);
     window.setMenu(null);
-    window.webContents.openDevTools()
     window.on('closed', () => (window = null));
 }
 

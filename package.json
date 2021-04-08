@@ -11,7 +11,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron",
-    "electron-build": "ng build && npm run electron ."
+    "electron-build": "ng build && npm run electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "private": true,
   "dependencies": {
@@ -53,8 +55,7 @@
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-plugin-whitelist": "^1.3.4",
     "electron": "12.0.2",
-    "electron-builder": "^22.9.1",
-    "electron-packager": "^15.2.0",
+    "electron-builder": "^22.10.5",
     "foreman": "^3.0.1",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
@@ -104,5 +105,22 @@
   },
   "peerDependencies": {
     "@types/node": "^14.14.37"
+  },
+  "build": {
+    "appId": "hyrule-warriors-maps",
+    "win": {
+      "icon": "resources/icon.ico",
+      "target": "portable"
+    },
+    "mac": {
+      "icon": "resources/icon.icns"
+    },
+    "linux": {
+      "target": "deb",
+      "executableName": "hyrule-warriors-maps"
+    },
+    "directories": {
+      "output": "release"
+    }
   }
 }
