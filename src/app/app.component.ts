@@ -67,7 +67,9 @@ export class AppComponent implements OnInit {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
+    this.splashScreen.show();
     this.initializeApp();
+    this.backButtonEvent();
   }
 
   initializeApp() {
@@ -75,6 +77,12 @@ export class AppComponent implements OnInit {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+  
+  backButtonEvent() {
+    this.platform.backButton.subscribeWithPriority(0, () => {
+      navigator['app'].exitApp();
+    })
   }
 
   ngOnInit() {
