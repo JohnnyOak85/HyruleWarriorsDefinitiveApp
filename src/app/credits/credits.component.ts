@@ -8,5 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class CreditsComponent implements OnInit {
   constructor() {}
 
+  openLink(url: string) {
+    window.open(url, '_system');
+  }
+
   ngOnInit() {}
 }
