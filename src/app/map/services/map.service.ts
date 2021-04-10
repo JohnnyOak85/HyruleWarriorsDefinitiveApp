@@ -15,6 +15,6 @@ export class MapService {
   constructor(private http: HttpClient) {}
 
   public getTiles(folder: string): Observable<TileFile> {
-    return this.http.get<TileFile>(`../../../assets/maps/${folder}/tiles.json`);
+    return this.http.get<TileFile>(`./assets/maps/${folder}/tiles.json`);
   }
 }

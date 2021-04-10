@@ -27,11 +27,13 @@ ion-menu-button {
   text-decoration: none;
 }
 
-@font-face {
-  font-family: HyliaSerif;
-  src: url('../../assets/fonts/HyliaSerif.otf') format('truetype');
+#farm {
+  position: absolute;
+  z-index: 2;
+  width: 25%;
 }
 
-* {
-  font-family: 'HyliaSerif';
+#tile {
+  position: absolute;
+  z-index: 1;
 }
