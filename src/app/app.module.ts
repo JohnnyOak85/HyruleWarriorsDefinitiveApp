@@ -15,9 +15,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MapService } from './map/services/map.service';
+import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CreditsComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

@@ -20,18 +20,18 @@ export class AppComponent implements OnInit {
       title: 'Adventure',
       url: '/map/adventure',
     },
-    // {
-    //   title: 'Great Sea',
-    //   url: '/map/great sea'
-    // },
+    {
+      title: 'Great Sea',
+      url: '/map/great sea'
+    },
     {
       title: 'Master Quest',
       url: '/map/master quest',
     },
-    // {
-    //   title: 'Master Wind Waker',
-    //   url: '/map/master wind waker'
-    // },
+    {
+      title: 'Master Wind Waker',
+      url: '/map/master wind waker'
+    },
     {
       title: 'Twilight',
       url: '/map/twilight',
@@ -40,10 +40,10 @@ export class AppComponent implements OnInit {
       title: 'Termina',
       url: '/map/termina',
     },
-    // {
-    //   title: 'Koholint Island',
-    //   url: '/map/koholint island'
-    // },
+    {
+      title: 'Koholint Island',
+      url: '/map/koholint island'
+    },
     // {
     //   title: 'Grand Travels',
     //   url: '/map/grand travels'

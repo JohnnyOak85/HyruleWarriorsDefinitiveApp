@@ -1,9 +1,9 @@
-<ion-app>
+<ion-app zooming="true">
   <ion-menu contentId="main-content" type="overlay">
 
     <ion-header>
       <ion-toolbar>
-        <ion-title>Hyrule Warriors Maps</ion-title>
+        <ion-title> Hyrule Warriors Maps </ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -13,6 +13,12 @@
           <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" detail="false"
             [class.selected]="selectedIndex == i">
             <ion-label>{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true" id="close-button">
+          <ion-item>
+            <ion-label> Close </ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
