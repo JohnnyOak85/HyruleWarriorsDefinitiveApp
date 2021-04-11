@@ -85,7 +85,7 @@
       "android"
     ]
   },
-  "main": "main.js",
+  "main": "main.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JohnnyOak85/HyruleWarriorsApp.git"
