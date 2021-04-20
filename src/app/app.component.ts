@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Great Sea',
-      url: '/map/great sea',
+      url: '/map/great sea'
     },
     {
       title: 'Master Quest',
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Master Wind Waker',
-      url: '/map/master wind waker',
+      url: '/map/master wind waker'
     },
     {
       title: 'Twilight',
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Koholint Island',
-      url: '/map/koholint island',
+      url: '/map/koholint island'
     },
     // {
     //   title: 'Grand Travels',
