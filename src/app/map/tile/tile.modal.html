@@ -17,7 +17,7 @@
     <h2 mat-dialog-title *ngIf="data.tile.rule">{{data.tile.rule}}</h2>
     <ion-grid *ngIf="data.tile.level">
         <h2>Difficulty</h2>
-        <ion-col *ngFor="let item of [].constructor(data.tile.level)" size="3">
+        <ion-col *ngFor="let item of [].constructor(data.tile.level)" size="2">
             <span>
                 <img src="./assets/icons/skelli.png">
             </span>
@@ -50,11 +50,9 @@
     <ion-grid *ngIf="data.tile.search">
         <h2>Search</h2>
         <ion-row>
-            <ion-col>
+            <ion-col size="6">
                 <img src="./assets/maps/{{data.map}}/search/{{data.tile.position}}.png" layout-fill>
             </ion-col>
-        </ion-row>
-        <ion-row>
             <ion-col *ngFor="let item of data.tile.search" size="2">
                 <img src="./assets/icons/{{item}}.png">
             </ion-col>
