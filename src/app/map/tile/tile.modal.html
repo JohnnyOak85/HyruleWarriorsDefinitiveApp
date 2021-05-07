@@ -59,18 +59,6 @@
         </ion-row>
     </ion-grid>
 
-    <ion-grid *ngIf="data.tile.victory">
-        <h2>Victory</h2>
-        <ion-row *ngFor="let spoil of data.tile.victory">
-            <ion-col size="2">
-                <img src="./assets/icons/{{spoil.loot}}.png">
-            </ion-col>
-            <ion-col size="2" *ngIf="spoil.char">
-                <img src="./assets/icons/{{spoil.char}}.png">
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-
     <ion-grid *ngIf="data.tile.rank">
         <h2>A Rank</h2>
         <ion-row>
@@ -84,6 +72,18 @@
                 <p *ngIf="data.tile.rank.kos">KOs: {{data.tile.rank.kos}}</p>
                 <p *ngIf="data.tile.rank.time">Minutes: {{data.tile.rank.time}}</p>
                 <p *ngIf="data.tile.rank.damage">Damage: {{data.tile.rank.damage}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="data.tile.victory">
+        <h2>Victory</h2>
+        <ion-row *ngFor="let spoil of data.tile.victory">
+            <ion-col size="2">
+                <img src="./assets/icons/{{spoil.loot}}.png">
+            </ion-col>
+            <ion-col size="2" *ngIf="spoil.char">
+                <img src="./assets/icons/{{spoil.char}}.png">
             </ion-col>
         </ion-row>
     </ion-grid>
