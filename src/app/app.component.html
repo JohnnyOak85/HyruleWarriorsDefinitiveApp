@@ -22,7 +22,7 @@
         </ion-radio-group>
 
         <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
-          <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" detail="false"
+          <ion-item (click)="changeMap(i)" routerDirection="root" [routerLink]="[p.url]" detail="false"
             [class.selected]="selectedIndex == i">
             <ion-label>{{ p.title }}</ion-label>
           </ion-item>

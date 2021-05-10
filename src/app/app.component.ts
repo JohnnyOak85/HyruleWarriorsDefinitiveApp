@@ -116,4 +116,9 @@ export class AppComponent implements OnInit {
     localStorage.setItem('viewType', event.detail.value);
     this.broadcaster.postMessage(event.detail.value);
   }
+
+  changeMap(index: number) {
+    this.selectedIndex = index;
+    localStorage.setItem('path', this.appPages[index].title.toLowerCase());
+  }
 }
