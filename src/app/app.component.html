@@ -9,6 +9,18 @@
 
     <ion-content>
       <ion-list id="map-list">
+
+        <ion-item (click)="toggleViewMenu()" id="clickable">
+          View <span class="material-icons">{{expandType}}</span>
+        </ion-item>
+
+        <ion-radio-group *ngIf="viewMenu" (ionChange)="radioSelect($event)">
+          <ion-item *ngFor="let view of viewList">
+            <ion-label> {{view.name}} </ion-label>
+            <ion-radio slot="start" color="primary" value="{{view.value}}"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+
         <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
           <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" detail="false"
             [class.selected]="selectedIndex == i">
@@ -16,11 +28,12 @@
           </ion-item>
         </ion-menu-toggle>
 
-        <ion-menu-toggle auto-hide="true" id="close-button">
+        <ion-menu-toggle auto-hide="true" id="clickable">
           <ion-item>
-            <ion-label> Close </ion-label>
+            <i class="material-icons">close</i>
           </ion-item>
         </ion-menu-toggle>
+
       </ion-list>
     </ion-content>
   </ion-menu>

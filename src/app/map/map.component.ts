@@ -15,6 +15,8 @@ import { Tile } from './tile/models/tile.model';
 export class MapComponent implements OnInit {
   public mapId: string;
   public tiles: Tile[];
+  public viewType = '';
+  private broadcaster = new BroadcastChannel('broadcaster');
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,9 +31,17 @@ export class MapComponent implements OnInit {
     this.mapService.getTiles(this.mapId.toLowerCase()).subscribe((data) => {
       this.tiles = data.TILE_LIST;
     });
+
+    this.viewType = localStorage.getItem('viewType');
+
+    this.broadcaster.onmessage = (message) => {
+      this.viewType = message.data;
+    };
   }
 
-  openTile(tile: string) {
+  openTile(tile: Tile) {
+    if (tile.blank) return;
+
     const config = new MatDialogConfig();
 
     config.data = { tile, map: this.mapId.toLowerCase() };

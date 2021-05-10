@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'map/legend',
+    redirectTo: `map/${localStorage.getItem('path') || 'legend'}`,
     pathMatch: 'full',
   },
 ];
