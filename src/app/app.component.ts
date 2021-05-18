@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   public expandType = 'expand_more';
   public viewMenu = false;
   public viewList = [
+    { name: 'Level', value: 'level' },
     { name: 'Farming', value: 'farm' },
     { name: 'Weapons', value: 'weapon' },
     { name: 'Hearts', value: 'heart' },
