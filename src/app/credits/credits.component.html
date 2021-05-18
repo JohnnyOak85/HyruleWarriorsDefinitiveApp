@@ -25,47 +25,14 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
-    <ion-card-title> &nbsp; Development </ion-card-title>
-    <ion-card-content>
-      Johnny Oak
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-title> &nbsp; Text Guide </ion-card-title>
-    <ion-card-content>
-      SBAllen
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-title> &nbsp; Graphical Assets </ion-card-title>
-    <ion-card-content>
-      Random Talking Bush<br>
-      Dary<br>
-      The I Gaming<br>
-      Johnny Oak<br>
-      Nazzikene<br>
-      lattrommi
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-title> &nbsp; Tiling </ion-card-title>
-    <ion-card-content>
-      Metroid DK<br>
-      The I Gaming<br>
-      Johnny Oak
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-title> &nbsp; Donators </ion-card-title>
-    <ion-card-content>
-      Cionraven<br>
-      Wordview<br>
-      Yasashi
-    </ion-card-content>
-  </ion-card>
+  <span *ngFor="let entry of credits">
+    <ion-card>
+      <ion-card-title> &nbsp; {{entry.task}} </ion-card-title>
+      <ion-card-content>
+        <p *ngFor="let person of entry.people">
+          {{person.name}}<span *ngIf="person.link" (click)="openLink(person.link)"> - <profile id="clickable">Profile</profile></span><br>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </span>
 </ion-content>
