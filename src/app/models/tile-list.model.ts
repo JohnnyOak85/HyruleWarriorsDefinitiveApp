@@ -32,6 +32,6 @@ export interface Tile {
   weapon?: string;
 }
 
-export interface TileFile {
+export interface TileList {
   TILE_LIST: Tile[];
 }

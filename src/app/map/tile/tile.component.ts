@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Tile } from './models/tile.model';
+import { Tile } from '../../models/tile-list.model';
 
 @Component({
   selector: 'app-tile',
