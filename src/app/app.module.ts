@@ -14,7 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { MapService } from './map/services/map.service';
+import { FileService } from './services/file.service';
 import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
@@ -32,7 +32,7 @@ import { CreditsComponent } from './credits/credits.component';
   ],
   exports: [MatGridListModule, MatDialogModule, MatCardModule],
   providers: [
-    MapService,
+    FileService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

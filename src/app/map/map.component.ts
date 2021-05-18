@@ -3,9 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-import { MapService } from './services/map.service';
+// import { MapService } from './services/map.service';
 import { TileComponent } from './tile/tile.component';
-import { Tile } from './tile/models/tile.model';
+import { Tile, TileList } from '../models/tile-list.model';
+import { FileService } from '../services/file.service';
 
 @Component({
   selector: 'app-map',
@@ -20,7 +21,7 @@ export class MapComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private mapService: MapService,
+    private fileService: FileService,
     public dialog: MatDialog,
     protected http: HttpClient
   ) {}
@@ -28,12 +29,13 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.mapId = this.activatedRoute.snapshot.params.id;
 
-    this.mapService.getTiles(this.mapId.toLowerCase()).subscribe((data) => {
-      this.tiles = data.TILE_LIST;
-    });
+    this.fileService
+      .getList<TileList>(`maps/${this.mapId.toLowerCase()}/tiles`)
+      .subscribe((data) => {
+        this.tiles = data.TILE_LIST;
+      });
 
     this.viewType = localStorage.getItem('viewType');
-
 
     this.broadcaster.onmessage = (message) => {
       this.viewType = message.data;
@@ -49,5 +51,4 @@ export class MapComponent implements OnInit {
 
     this.dialog.open(TileComponent, config);
   }
- 
 }
