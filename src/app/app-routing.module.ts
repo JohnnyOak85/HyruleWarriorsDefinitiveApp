@@ -1,20 +1,32 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { CreditsComponent } from './credits/credits.component';
+
+import { ChallengeComponent } from './components/challenge/challenge.component';
+import { CreditsComponent } from './components/credits/credits.component';
+import { LegendsComponent } from './components/legend/legend.component';
+import { MapComponent } from './components/map/map.component';
 
 const routes: Routes = [
   {
-    path: 'map/:id',
-    loadChildren: () => import('./map/map.module').then((m) => m.MapModule),
+    path: '',
+    redirectTo: localStorage.getItem('path') || 'legend-mode',
+    pathMatch: 'full',
   },
   {
-    path: 'about',
+    path: 'credits',
     component: CreditsComponent,
   },
   {
-    path: '',
-    redirectTo: `map/${localStorage.getItem('path') || 'legend'}`,
-    pathMatch: 'full',
+    path: 'challenge-mode',
+    component: ChallengeComponent,
+  },
+  {
+    path: 'legend-mode',
+    component: LegendsComponent,
+  },
+  {
+    path: 'map/:id',
+    component: MapComponent,
   },
 ];
 

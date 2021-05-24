@@ -1,36 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
-// import { MapService } from './services/map.service';
-import { TileComponent } from './tile/tile.component';
-import { Tile, TileList } from '../models/tile-list.model';
-import { FileService } from '../services/file.service';
+import { TileComponent } from '../tile/tile.component';
+import { Tile, TileList } from '../../models/tile-list.model';
+import { FileService } from '../../services/file.service';
 
 @Component({
   selector: 'app-map',
-  templateUrl: './map.page.html',
-  styleUrls: ['./map.page.scss'],
+  templateUrl: './legend.html',
+  styleUrls: ['./legend.scss'],
 })
-export class MapComponent implements OnInit {
+export class LegendsComponent implements OnInit {
   public mapId: string;
   public tiles: Tile[];
   public viewType = '';
   private broadcaster = new BroadcastChannel('broadcaster');
 
   constructor(
-    private activatedRoute: ActivatedRoute,
     private fileService: FileService,
     public dialog: MatDialog,
     protected http: HttpClient
   ) {}
 
   ngOnInit() {
-    this.mapId = this.activatedRoute.snapshot.params.id;
+    this.mapId = 'Legend';
 
     this.fileService
-      .getList<TileList>(`maps/${this.mapId.toLowerCase()}/tiles`)
+      .getList<TileList>(`maps/legend/tiles`)
       .subscribe((data) => {
         this.tiles = data.TILE_LIST;
       });
@@ -39,6 +36,7 @@ export class MapComponent implements OnInit {
 
     this.broadcaster.onmessage = (message) => {
       this.viewType = message.data;
+      // this.openTile({ blank: true });
     };
   }
 

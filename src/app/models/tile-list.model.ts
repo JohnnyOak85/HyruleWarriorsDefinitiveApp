@@ -11,22 +11,22 @@ interface Spoil {
 }
 
 export interface Tile {
-  blank: boolean;
-  blurb: string;
+  blank?: boolean;
+  blurb?: string;
   fairy?: string;
-  fairyWear: string;
-  fairyFood: string;
+  fairyWear?: string;
+  fairyFood?: string;
   farm?: Spoil[];
   heart?: string;
   level?: number;
   outfit?: string;
   piece?: string;
-  position: string;
+  position?: string;
   pot?: Spoil[];
   rank?: Spoil;
   rule?: string;
   search?: string[];
-  skulltula: string[];
+  skulltula?: string[];
   treasure?: Spoil[];
   victory?: Spoil[];
   weapon?: string;

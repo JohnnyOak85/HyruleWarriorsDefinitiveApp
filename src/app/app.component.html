@@ -9,23 +9,57 @@
 
     <ion-content>
       <ion-list id="map-list">
-        <ion-item (click)="toggleViewMenu()" id="clickable">
-          View <span class="material-icons">{{expandType}}</span>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item routerDirection="root" [routerLink]="['/legend-mode']" detail="false" (click)="setURL('/legend-mode')">
+            Legend Mode
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-item (click)="toggleMapMenu()" id="clickable">
+          Adventure Mode <span class="material-icons">{{mapExpandType}}</span>
         </ion-item>
 
-        <ion-radio-group *ngIf="viewMenu" (ionChange)="radioSelect($event)">
-          <ion-item *ngFor="let view of viewList">
-            <ion-label> {{view.name}} </ion-label>
-            <ion-radio slot="start" color="primary" value="{{view.value}}"></ion-radio>
+        <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
+          <ion-item *ngIf="mapMenu" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"
+            detail="false" [class.selected]="selectedIndex == i"  (click)="setURL(p.url)">
+            &#160; {{p.title}}
           </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item routerDirection="root" [routerLink]="['/challenge-mode']" detail="false" (click)="setURL('/challenge-mode')">
+            Challenge Mode
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item routerDirection="root" [routerLink]="['/credits']" detail="false">
+            Credits
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-item (click)="toggleViewMenu()" id="clickable">
+          View <span class="material-icons">{{viewExpandType}}</span>
+        </ion-item>
+
+        <ion-radio-group *ngIf="viewMenu" (ionChange)="radioSelect($event)" value="{{selectedView}}">
+          <ion-menu-toggle auto-hide="true">
+            <ion-item *ngFor="let view of viewList">
+              <ion-label> {{view.name}} </ion-label>
+              <ion-radio slot="start" color="primary" value="{{view.value}}"></ion-radio>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-radio-group>
 
-        <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
+
+
+        <!-- <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
           <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" detail="false"
             [class.selected]="selectedIndex == i">
             <ion-label>{{ p.title }}</ion-label>
           </ion-item>
-        </ion-menu-toggle>
+        </ion-menu-toggle> -->
 
         <ion-menu-toggle auto-hide="true" id="clickable">
           <ion-item>

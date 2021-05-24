@@ -1,19 +1,18 @@
-// Angular
 import { Component, OnInit } from '@angular/core';
 
-// Models
-import { CreditsEntry, CreditsList } from '../models/credits-list.model';
-
-// Services
-import { FileService } from '../services/file.service';
+import { CreditsEntry, CreditsList } from '../../models/credits-list.model';
+import { FileService } from '../../services/file.service';
 
 @Component({
   selector: 'app-credits',
-  templateUrl: './credits.component.html',
-  styleUrls: ['./credits.component.scss'],
+  templateUrl: './credits.html',
+  styleUrls: ['./credits.scss'],
 })
 export class CreditsComponent implements OnInit {
   public credits: CreditsEntry[];
+  public paypalURL =
+    'https://www.paypal.com/donate?hosted_button_id=VSCKB9GVSENJQ';
+  public discordURL = 'https://discord.gg/ErHYKYAzSm';
 
   constructor(private fileService: FileService) {}
 

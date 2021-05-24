@@ -1,11 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 import { Tile } from '../../models/tile-list.model';
 
 @Component({
   selector: 'app-tile',
-  templateUrl: 'tile.modal.html',
-  styleUrls: ['tile.modal.scss'],
+  templateUrl: 'tile.html',
+  styleUrls: ['tile.scss'],
 })
 export class TileComponent {
   constructor(

@@ -1,0 +1,25 @@
+<ion-header [translucent]="false">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Challenge Mode</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content id="container">
+    <ion-grid>
+        <ion-card id="card" *ngFor="let mode of modes">
+            <ion-card-title color="warning"> &nbsp; {{challengeList[mode].name}}</ion-card-title>
+            <ion-list *ngFor="let challenge of challengeList[mode].challenges">
+                <ion-item>
+                    {{challenge.blurb}}<br>
+                    A Rank
+                </ion-item>
+                <ion-label *ngIf="challenge.rank.kos">&nbsp; &nbsp; KOs: {{challenge.rank.kos}}<br></ion-label>
+                <ion-label *ngIf="challenge.rank.time">&nbsp; &nbsp; Minutes: {{challenge.rank.time}}<br></ion-label>
+                <ion-label *ngIf="challenge.rank.damage">&nbsp; &nbsp; Damage: {{challenge.rank.damage}}</ion-label>
+            </ion-list>
+        </ion-card>
+    </ion-grid>
+</ion-content>

@@ -11,8 +11,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   private broadcaster = new BroadcastChannel('broadcaster');
-  public expandType = 'expand_more';
+  public viewExpandType = 'expand_more';
+  public mapExpandType = 'expand_more';
   public viewMenu = false;
+  public mapMenu = false;
+  public selectedView = 'none';
   public viewList = [
     { name: 'Level', value: 'level' },
     { name: 'Farming', value: 'farm' },
@@ -28,10 +31,10 @@ export class AppComponent implements OnInit {
   ];
   public selectedIndex = 0;
   public appPages = [
-    {
-      title: 'Legend',
-      url: '/map/legend',
-    },
+    // {
+    //   title: 'Legend Mode',
+    //   url: '/legend-mode',
+    // },
     {
       title: 'Adventure',
       url: '/map/adventure',
@@ -72,10 +75,14 @@ export class AppComponent implements OnInit {
       title: 'Rewards',
       url: '/map/rewards',
     },
-    {
-      title: 'About',
-      url: '/about',
-    },
+    // {
+    //   title: 'Challenge Mode',
+    //   url: '/challenge-mode',
+    // },
+    // {
+    //   title: 'Credits',
+    //   url: '/credits',
+    // },
   ];
 
   constructor(
@@ -103,27 +110,43 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const path =
-      window.location.pathname.split('map/')[1] || localStorage.getItem('path');
+      window.location.pathname.split('map/')[1] ||
+      localStorage.getItem('path').replace('map/', '');
 
     if (path != undefined) {
-      localStorage.setItem('path', path);
+      // localStorage.setItem('path', `map/${path}`);
 
       this.selectedIndex = this.appPages.findIndex(
         (page) => page.title.toLowerCase() === path.toLowerCase()
       );
-      console.log(this.selectedIndex);
+
+      this.selectedView = localStorage.getItem('viewType');
     }
   }
 
   toggleViewMenu() {
     this.viewMenu = !this.viewMenu;
 
-    if (this.expandType === 'expand_more') this.expandType = 'expand_less';
-    else this.expandType = 'expand_more';
+    if (this.viewExpandType === 'expand_more') this.viewExpandType = 'expand_less';
+    else this.viewExpandType = 'expand_more';
+  }
+
+  toggleMapMenu() {
+    this.mapMenu = !this.mapMenu;
+
+    if (this.mapExpandType === 'expand_more') this.mapExpandType = 'expand_less';
+    else this.mapExpandType = 'expand_more';
+  }
+
+  setURL(mode: string) {
+    localStorage.setItem('path', mode);
   }
 
   radioSelect(event) {
+    console.log(event)
+    this.selectedView = event.detail.value;
     localStorage.setItem('viewType', event.detail.value);
     this.broadcaster.postMessage(event.detail.value);
+    this.toggleViewMenu();
   }
 }
