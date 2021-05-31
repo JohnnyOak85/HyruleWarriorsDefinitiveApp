@@ -7,9 +7,12 @@ export interface Challenge {
   };
 }
 
+export interface ChallengeMode {
+  name: string;
+  challenges: Challenge[];
+  show?: boolean;
+}
+
 export interface ChallengeList {
-  [name: string]: {
-    name: string;
-    challenges: Challenge[];
-  };
+  [name: string]: ChallengeMode;
 }
