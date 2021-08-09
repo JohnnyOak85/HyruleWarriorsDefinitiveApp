@@ -1,17 +1,12 @@
 <ion-app zooming="true">
   <ion-menu contentId="main-content" type="overlay">
 
-    <ion-header>
-      <ion-toolbar>
-        <ion-title> Hyrule Warriors Definitive App </ion-title>
-      </ion-toolbar>
-    </ion-header>
-
     <ion-content>
       <ion-list id="map-list">
 
         <ion-menu-toggle auto-hide="true">
-          <ion-item routerDirection="root" [routerLink]="['/legend-mode']" detail="false" (click)="setURL('/legend-mode')">
+          <ion-item routerDirection="root" [routerLink]="['/legend-mode']" detail="false"
+            (click)="setURL('/legend-mode')">
             Legend Mode
           </ion-item>
         </ion-menu-toggle>
@@ -20,15 +15,16 @@
           Adventure Mode <span class="material-icons">{{mapExpandType}}</span>
         </ion-item>
 
-        <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
-          <ion-item *ngIf="mapMenu" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"
-            detail="false" [class.selected]="selectedIndex == i"  (click)="setURL(p.url)">
+        <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages">
+          <ion-item *ngIf="mapMenu" routerDirection="root" [routerLink]="[p.url]" detail="false"
+            (click)="setURL(p.url, true)">
             &#160; {{p.title}}
           </ion-item>
         </ion-menu-toggle>
 
         <ion-menu-toggle auto-hide="true">
-          <ion-item routerDirection="root" [routerLink]="['/challenge-mode']" detail="false" (click)="setURL('/challenge-mode')">
+          <ion-item routerDirection="root" [routerLink]="['/challenge-mode']" detail="false"
+            (click)="setURL('/challenge-mode')">
             Challenge Mode
           </ion-item>
         </ion-menu-toggle>
@@ -39,27 +35,18 @@
           </ion-item>
         </ion-menu-toggle>
 
-        <ion-item (click)="toggleViewMenu()" id="clickable">
-          View <span class="material-icons">{{viewExpandType}}</span>
+        <ion-item (click)="toggleDisplayMenu()" id="clickable">
+          Change Display <span class="material-icons">{{displayExpandType}}</span>
         </ion-item>
 
-        <ion-radio-group *ngIf="viewMenu" (ionChange)="radioSelect($event)" value="{{selectedView}}">
+        <ion-radio-group *ngIf="displayMenu" (ionChange)="radioSelect($event)" value="{{selectedDisplay}}">
           <ion-menu-toggle auto-hide="true">
-            <ion-item *ngFor="let view of viewList">
-              <ion-label> {{view.name}} </ion-label>
-              <ion-radio slot="start" color="primary" value="{{view.value}}"></ion-radio>
+            <ion-item *ngFor="let display of displayList">
+              <ion-label> {{display.name}} </ion-label>
+              <ion-radio slot="start" color="primary" value="{{display.value}}"></ion-radio>
             </ion-item>
           </ion-menu-toggle>
         </ion-radio-group>
-
-
-
-        <!-- <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
-          <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" detail="false"
-            [class.selected]="selectedIndex == i">
-            <ion-label>{{ p.title }}</ion-label>
-          </ion-item>
-        </ion-menu-toggle> -->
 
         <ion-menu-toggle auto-hide="true" id="clickable">
           <ion-item>

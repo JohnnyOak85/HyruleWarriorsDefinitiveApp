@@ -10,7 +10,7 @@ interface Spoil {
   where?: string;
 }
 
-export interface Tile {
+interface Tile {
   blank?: boolean;
   blurb?: string;
   fairy?: string;
@@ -32,6 +32,8 @@ export interface Tile {
   weapon?: string;
 }
 
-export interface TileList {
+interface TileList {
   TILE_LIST: Tile[];
 }
+
+export { Tile, TileList };

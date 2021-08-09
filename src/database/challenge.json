@@ -1,0 +1,252 @@
+{
+    "battle": {
+        "name": "Battle Challenge",
+        "challenges": [
+            {
+                "blurb": "Running Battle in Faron Woods",
+                "rank": {
+                    "kos": 1200
+                }
+            },
+            {
+                "blurb": "Rush Battle!",
+                "rank": {
+                    "kos": 1200,
+                    "damage": 99
+                }
+            },
+            {
+                "blurb": "Defeat 800 enemies!",
+                "rank": {
+                    "time": 5,
+                    "damage": 99
+                }
+            }
+        ]
+    },
+    "boss": {
+        "name": "Boss Challenge",
+        "challenges": [
+            {
+                "blurb": "Defeat 1000 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 99
+                }
+            },
+            {
+                "blurb": "Defeat 1500 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 99
+                }
+            },
+            {
+                "blurb": "Defeat 2000 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Brave Battle LV.1",
+                "rank": {
+                    "time": 15,
+                    "damage": 99
+                }
+            },
+            {
+                "blurb": "Brave Battle LV.2",
+                "rank": {
+                    "time": 15,
+                    "damage": 99
+                }
+            },
+            {
+                "blurb": "Brave Battle LV.3",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.1",
+                "rank": {
+                    "kos": 1600,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.2",
+                "rank": {
+                    "kos": 1600,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.3",
+                "rank": {
+                    "kos": 1600,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.4",
+                "rank": {
+                    "kos": 1600,
+                    "time": 45
+                }
+            }
+        ]
+    },
+    "ganon": {
+        "name": "Ganon's Fury",
+        "challenges": [
+            {
+                "blurb": "Defeat 5,000 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Defeat 7,000 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Defeat 9,999 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 299
+                }
+            },
+            {
+                "blurb": "Giant Battle LV.1",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Giant Battle LV.2",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Giant Battle LV.3",
+                "rank": {
+                    "time": 15,
+                    "damage": 299
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.1",
+                "rank": {
+                    "kos": 5000,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.2",
+                "rank": {
+                    "kos": 5000,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.3",
+                "rank": {
+                    "kos": 5000,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.4",
+                "rank": {
+                    "kos": 5000,
+                    "time": 45
+                }
+            }
+        ]
+    },
+    "cucco": {
+        "name": "Cucco's Fury",
+        "challenges": [
+            {
+                "blurb": "Defeat 5,000 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Defeat 7,000 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Defeat 9,999 enemies!",
+                "rank": {
+                    "time": 15,
+                    "damage": 299
+                }
+            },
+            {
+                "blurb": "Giant Battle LV.1",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Giant Battle LV.2",
+                "rank": {
+                    "time": 15,
+                    "damage": 199
+                }
+            },
+            {
+                "blurb": "Giant Battle LV.3",
+                "rank": {
+                    "time": 15,
+                    "damage": 299
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.1",
+                "rank": {
+                    "kos": 5000,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.2",
+                "rank": {
+                    "kos": 5000,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.3",
+                "rank": {
+                    "kos": 5000,
+                    "time": 30
+                }
+            },
+            {
+                "blurb": "Survival Battle LV.4",
+                "rank": {
+                    "kos": 5000,
+                    "time": 45
+                }
+            }
+        ]
+    }
+}

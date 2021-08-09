@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -15,11 +15,12 @@ import { FileService } from '../../services/file.service';
 export class MapComponent implements OnInit {
   public mapId: string;
   public tiles: Tile[];
-  public viewType = '';
+  public selectedDisplay = 'none';
   private broadcaster = new BroadcastChannel('broadcaster');
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private ngZone: NgZone,
     private fileService: FileService,
     public dialog: MatDialog,
     protected http: HttpClient
@@ -34,10 +35,12 @@ export class MapComponent implements OnInit {
         this.tiles = data.TILE_LIST;
       });
 
-    this.viewType = localStorage.getItem('viewType');
+    this.selectedDisplay = localStorage.getItem('selectedDisplay');
 
     this.broadcaster.onmessage = (message) => {
-      this.viewType = message.data;
+      this.ngZone.run(() => {
+        this.selectedDisplay = message.data;
+      });
     };
   }
 

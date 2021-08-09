@@ -11,12 +11,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   private broadcaster = new BroadcastChannel('broadcaster');
-  public viewExpandType = 'expand_more';
+  public displayExpandType = 'expand_more';
   public mapExpandType = 'expand_more';
-  public viewMenu = false;
+  public displayMenu = false;
   public mapMenu = false;
-  public selectedView = 'none';
-  public viewList = [
+  public selectedDisplay = 'none';
+  public displayList = [
     { name: 'Level', value: 'level' },
     { name: 'Farming', value: 'farm' },
     { name: 'Weapons', value: 'weapon' },
@@ -29,12 +29,7 @@ export class AppComponent implements OnInit {
     { name: 'Skulltulas', value: 'skulltula' },
     { name: 'None', value: '' },
   ];
-  public selectedIndex = 0;
   public appPages = [
-    // {
-    //   title: 'Legend Mode',
-    //   url: '/legend-mode',
-    // },
     {
       title: 'Adventure',
       url: '/map/adventure',
@@ -67,22 +62,14 @@ export class AppComponent implements OnInit {
       title: 'Grand Travels',
       url: '/map/grand travels',
     },
-    // {
-    //   title: 'Lorule',
-    //   url: '/map/lorule'
-    // },
+    {
+      title: 'Lorule',
+      url: '/map/lorule',
+    },
     {
       title: 'Rewards',
       url: '/map/rewards',
     },
-    // {
-    //   title: 'Challenge Mode',
-    //   url: '/challenge-mode',
-    // },
-    // {
-    //   title: 'Credits',
-    //   url: '/credits',
-    // },
   ];
 
   constructor(
@@ -109,44 +96,35 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path =
-      window.location.pathname.split('map/')[1] ||
-      localStorage.getItem('path').replace('map/', '');
-
-    if (path != undefined) {
-      // localStorage.setItem('path', `map/${path}`);
-
-      this.selectedIndex = this.appPages.findIndex(
-        (page) => page.title.toLowerCase() === path.toLowerCase()
-      );
-
-      this.selectedView = localStorage.getItem('viewType');
-    }
+    this.selectedDisplay = localStorage.getItem('selectedDisplay');
   }
 
-  toggleViewMenu() {
-    this.viewMenu = !this.viewMenu;
+  toggleDisplayMenu() {
+    this.displayMenu = !this.displayMenu;
 
-    if (this.viewExpandType === 'expand_more') this.viewExpandType = 'expand_less';
-    else this.viewExpandType = 'expand_more';
+    if (this.displayExpandType === 'expand_more')
+      this.displayExpandType = 'expand_less';
+    else this.displayExpandType = 'expand_more';
   }
 
   toggleMapMenu() {
     this.mapMenu = !this.mapMenu;
 
-    if (this.mapExpandType === 'expand_more') this.mapExpandType = 'expand_less';
+    if (this.mapExpandType === 'expand_more')
+      this.mapExpandType = 'expand_less';
     else this.mapExpandType = 'expand_more';
   }
 
-  setURL(mode: string) {
+  setURL(mode: string, toggleMenu?: boolean) {
     localStorage.setItem('path', mode);
+
+    if (toggleMenu) this.toggleMapMenu();
   }
 
   radioSelect(event) {
-    console.log(event)
-    this.selectedView = event.detail.value;
-    localStorage.setItem('viewType', event.detail.value);
+    this.selectedDisplay = event.detail.value;
+    localStorage.setItem('selectedDisplay', event.detail.value);
     this.broadcaster.postMessage(event.detail.value);
-    this.toggleViewMenu();
+    this.toggleDisplayMenu();
   }
 }

@@ -1,0 +1,93 @@
+{
+    "CREDITS": [
+        {
+            "task": "Development",
+            "people": [
+                {
+                    "name": "Johnny Oak",
+                    "link": "https://johnnyoak85.github.io/"
+                }
+            ]
+        },
+        {
+            "task": "Original Text Guide",
+            "people": [
+                {
+                    "name": "SBAllen",
+                    "link": "https://gamefaqs.gamespot.com/community/SBAllen"
+                }
+            ]
+        },
+        {
+            "task": "Graphical Assets",
+            "people": [
+                {
+                    "name": "Random Talking Bush",
+                    "link": "https://www.spriters-resource.com/submitter/Random+Talking+Bush/"
+                },
+                {
+                    "name": "Dary",
+                    "link": ""
+                },
+                {
+                    "name": "The I Gaming",
+                    "link": "https://www.youtube.com/channel/UC77av-Gh14NyqqRBfNODSLQ"
+                },
+                {
+                    "name": "Johnny Oak",
+                    "link": ""
+                },
+                {
+                    "name": "Nazzikene",
+                    "link": ""
+                },
+                {
+                    "name": "lattrommi",
+                    "link": ""
+                },
+                {
+                    "name": "DelfinoDurians",
+                    "link": "https://www.youtube.com/channel/UCPCavrPS5XzwfDnD6u05dTA"
+                },
+                {
+                    "name": "anth096",
+                    "link": ""
+                }
+            ]
+        },
+        {
+            "task": "Tiling",
+            "people": [
+                {
+                    "name": "Metroid DK",
+                    "link": "https://gamefaqs.gamespot.com/community/Metroid_Lover"
+                },
+                {
+                    "name": "The I Gaming",
+                    "link": ""
+                },
+                {
+                    "name": "Johnny Oak",
+                    "link": ""
+                }
+            ]
+        },
+        {
+            "task": "Supporters",
+            "people": [
+                {
+                    "name": "Cionraven",
+                    "link": ""
+                },
+                {
+                    "name": "Wordview",
+                    "link": ""
+                },
+                {
+                    "name": "Yasashi",
+                    "link": ""
+                }
+            ]
+        }
+    ]
+}

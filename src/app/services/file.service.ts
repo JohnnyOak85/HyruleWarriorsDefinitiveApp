@@ -14,4 +14,8 @@ export class FileService {
   getList<T>(folder: string): Observable<T> {
     return this.http.get<T>(`./assets/${folder}.json`);
   }
+
+  getFile<T>(path: string): Observable<T> {
+    return this.http.get<T>(`./database/${path}.json`)
+  }
 }

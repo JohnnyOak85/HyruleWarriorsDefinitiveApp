@@ -10,21 +10,21 @@
 <ion-content id="container">
     <ion-grid>
         <ion-card id="card" *ngFor="let mode of modes">
-            <ion-button color="warning" shape="round" (click)="showChallenges(challengeList[mode])">{{challengeList[mode].name}}</ion-button>
-            <!-- <ion-card-title color="warning" (click)="showChallenges(challengeList[mode])"> &nbsp;
-                {{challengeList[mode].name}}</ion-card-title> -->
+            <ion-button color="warning" shape="round" (click)="showChallenges(challengeList[mode])">
+                {{challengeList[mode].name}}</ion-button>
 
-                <span *ngIf="challengeList[mode].show">
-                    <ion-list *ngFor="let challenge of challengeList[mode].challenges">
-                        <ion-item>
-                            {{challenge.blurb}}<br>
-                            A Rank
-                        </ion-item>
-                        <ion-label *ngIf="challenge.rank.kos">&nbsp; &nbsp; KOs: {{challenge.rank.kos}}<br></ion-label>
-                        <ion-label *ngIf="challenge.rank.time">&nbsp; &nbsp; Minutes: {{challenge.rank.time}}<br></ion-label>
-                        <ion-label *ngIf="challenge.rank.damage">&nbsp; &nbsp; Damage: {{challenge.rank.damage}}</ion-label>
-                    </ion-list>
-                </span>
+            <span *ngIf="challengeList[mode].show">
+                <ion-list *ngFor="let challenge of challengeList[mode].challenges">
+                    <ion-item>
+                        {{challenge.blurb}}<br>
+                        A Rank
+                    </ion-item>
+                    <ion-label *ngIf="challenge.rank.kos">&nbsp; &nbsp; KOs: {{challenge.rank.kos}}<br></ion-label>
+                    <ion-label *ngIf="challenge.rank.time">&nbsp; &nbsp; Minutes: {{challenge.rank.time}}<br>
+                    </ion-label>
+                    <ion-label *ngIf="challenge.rank.damage">&nbsp; &nbsp; Damage: {{challenge.rank.damage}}</ion-label>
+                </ion-list>
+            </span>
         </ion-card>
     </ion-grid>
 </ion-content>

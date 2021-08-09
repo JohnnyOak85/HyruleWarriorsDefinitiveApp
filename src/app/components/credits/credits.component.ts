@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CreditsEntry, CreditsList } from '../../models/credits-list.model';
+import { LinkList } from 'src/app/models/link-list.model';
 import { FileService } from '../../services/file.service';
 
 @Component({
@@ -23,6 +24,11 @@ export class CreditsComponent implements OnInit {
   ngOnInit() {
     this.fileService.getList<CreditsList>(`credits`).subscribe((data) => {
       this.credits = data.CREDITS;
+    });
+
+    this.fileService.getFile<LinkList>('sites').subscribe((data) => {
+      this.paypalURL = data.paypal;
+      this.discordURL = data.discord;
     });
   }
 }

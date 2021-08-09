@@ -1,4 +1,4 @@
-export interface Challenge {
+interface Challenge {
   blurb: string;
   rank: {
     kos?: number;
@@ -7,12 +7,14 @@ export interface Challenge {
   };
 }
 
-export interface ChallengeMode {
+interface ChallengeMode {
   name: string;
   challenges: Challenge[];
   show?: boolean;
 }
 
-export interface ChallengeList {
+interface ChallengeList {
   [name: string]: ChallengeMode;
 }
+
+export { ChallengeList, ChallengeMode };

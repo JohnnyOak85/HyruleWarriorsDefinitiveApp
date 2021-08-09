@@ -11,17 +11,17 @@
   <div id="container">
     <mat-grid-list id="tiles" cols="18" rowHeight="18:10">
       <mat-grid-tile *ngFor="let tile of tiles">
-        <img id="farm" *ngIf="viewType === 'farm' && tile.farm" src="./assets/icons/{{tile.farm[0].char}}.png"
+        <img id="farm" *ngIf="selectedDisplay === 'farm' && tile.farm" src="./assets/icons/{{tile.farm[0].char}}.png"
           (click)="openTile(tile)">
-        <img id="weapon" *ngIf="viewType === 'weapon' && tile.weapon" src="./assets/icons/{{tile.weapon}}.png"
+        <img id="weapon" *ngIf="selectedDisplay === 'weapon' && tile.weapon" src="./assets/icons/{{tile.weapon}}.png"
           (click)="openTile(tile)">
-        <img id="farm" *ngIf="viewType === 'heart' && tile.heart" src="./assets/icons/{{tile.heart}}.png"
+        <img id="farm" *ngIf="selectedDisplay === 'heart' && tile.heart" src="./assets/icons/{{tile.heart}}.png"
           (click)="openTile(tile)">
-        <img id="farm" *ngIf="viewType === 'piece' && tile.piece" src="./assets/icons/{{tile.piece}}.png"
+        <img id="farm" *ngIf="selectedDisplay === 'piece' && tile.piece" src="./assets/icons/{{tile.piece}}.png"
           (click)="openTile(tile)">
-        <img id="char" *ngIf="viewType === 'outfit' && tile.outfit" src="./assets/icons/{{tile.outfit}}.png"
+        <img id="char" *ngIf="selectedDisplay === 'outfit' && tile.outfit" src="./assets/icons/{{tile.outfit}}.png"
           (click)="openTile(tile)">
-        <img id="farm" *ngIf="viewType === 'skulltula' && tile.skulltula" src="./assets/icons/skulltula.png"
+        <img id="farm" *ngIf="selectedDisplay === 'skulltula' && tile.skulltula" src="./assets/icons/skulltula.png"
           (click)="openTile(tile)">
         <img id="tile" src="./assets/maps/{{mapId.toLowerCase()}}/tiles/{{tile.position}}.png" layout-fill
           *ngIf="tile.position" (click)="openTile(tile)">

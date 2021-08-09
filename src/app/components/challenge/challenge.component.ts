@@ -1,10 +1,12 @@
 // Angular
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 import { FileService } from '../../services/file.service';
-import { Challenge, ChallengeList } from '../../models/challenge-list.model';
-import { TileComponent } from '../tile/tile.component';
+import {
+  ChallengeList,
+  ChallengeMode,
+} from '../../models/challenge-list.model';
 
 @Component({
   selector: 'app-credits',
@@ -25,17 +27,10 @@ export class ChallengeComponent implements OnInit {
     this.fileService.getList<ChallengeList>('challenge').subscribe((data) => {
       this.challengeList = data;
       this.modes = Object.keys(data);
-
-      console.log(this.challengeList);
     });
   }
 
-  openTile(challenge: Challenge) {
-    console.log(challenge);
-    const config = new MatDialogConfig();
-
-    config.data = { tile: challenge, map: '' };
-
-    this.dialog.open(TileComponent, config);
+  showChallenges(mode: ChallengeMode) {
+    mode.show = !mode.show;
   }
 }
